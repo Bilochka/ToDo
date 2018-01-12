@@ -1,0 +1,84 @@
+@charset "UTF-8";
+
+
+*{
+	padding:0;
+	margin:0 ;	
+	
+} 
+.container{	
+	color: navy;
+	background:   rgba(233,252,250,1.00);	
+	
+}
+
+#todoHeader{
+	font-family: Snap ITC ;
+	font-weight: bold;
+	font-size: 30pt;
+	text-align: center ;
+	width:100%;
+	height: 60px;
+	background: rgba(142,191,187,0.99) ;
+	padding: 0;	
+	margin:0 ;		
+	color: rgba(91,28,160,1.00);
+}
+.row{	
+	width:100%;
+	height: 100%;
+	color: navy;	
+}
+.ok{
+	
+}
+
+.col-sm-4{	
+	height: 420px;
+}
+
+
+#impSpecialization{		
+	display: none;	
+	
+}
+#impJobTitle{		
+	display: none;
+}
+
+.col-sm-8{	
+	height: 420px;
+	visibility:hidden;
+}
+/*
+#simple {
+  display: block; // по умолчанию показываем нужный блок 
+}
+#home {
+  display: none; // по умолчанию прячем все блоки 
+}
+#project {
+  display: none; // по умолчанию прячем все блоки 
+}
+*/
+
+
+.list{	
+	font-size: 18pt;
+	color: navy;	
+}
+#list{		
+	text-indent: 0.7em;
+}
+
+
+#footer{	
+	font-family: Chiller ;
+	font-weight: bold;
+	//overflow: hidden;    
+	width:100%;
+	height: 70px;
+	background:   rgba(248,213,237,1.00);	
+	text-align: center ;
+	font-size: 16pt;
+}

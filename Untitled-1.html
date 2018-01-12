@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>My todo list</title>
+	<meta  charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="style.css" rel="stylesheet" type="text/css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+</head>
+<body>
+<div class="container">
+	<div  class="todoList">
+  		<header id="todoHeader">Todo list &nbsp; </header>
+	</div>
+  <div class="row">  
+    <div class="col-sm-4">
+    	<form name="UserSpace"  method="post">
+			<h3 class="list"><strong>User space</strong></h3>
+		    <select class="sel" id = "selo"  title="Select user">
+		        <option  value="selUser" selected>---select---</option>
+				<option  value="user">User</option>
+				<option  value="student" >Student</option>
+				<option  value="developer" >Developer</option>
+  			</select>
+			<p></p>
+			<p><input type="text" id="impName" placeholder="Name" maxlength="25"></p>
+			<p><input type="text" id="impSurname" size="20" placeholder="Surname" maxlength="25"></p>
+			<p><input type="text" id="impSpecialization" size="20" placeholder="Specialization" maxlength="25"></p>
+			<p><input type="text" id="impJobTitle" size="20" placeholder="Job title" maxlength="25"></p> 
+			<p><button type="button" class="btn btn-success ok" id="createUser" >Ok</button>
+		</form>
+	</div>
+			
+ <div class="col-sm-8 tasks" >
+    	<form name="TasksSpace" action="" method="post" >           
+			 <h3 class="list"><strong>Tasks space</strong></h3>				 	 
+			  <ul class="nav nav-tabs" id="selectTask">
+				<li class="active tabSimple "><a data-toggle="tab" class="noclicker" id="Simpleclick" href="#simple">Simple</a></li>
+				<li><a class="clicker"  data-toggle="tab" id="Homeclick"   href="#home">Home</a></li>
+				<li><a class="clicker"  data-toggle="tab"  id="Projectclick" href="#project">Project</a></li>			
+			  </ul>		  	
+			  	 <div class="tab-content">            
+                        <div id="simple"  class="tab-pane fade in active"> 
+				            <p><input id="simpleTitle" type="text"  placeholder="Title" maxlength="25"></p>
+							<p><input id="simpleStatus" type="text" size="20" placeholder="Status" maxlength="25"></p>
+						</div>
+						
+										    				    
+					    
+						<div id="home" class="tab-pane fade tabs_home">	      	 
+							<p><input id="homeTitle" type="text"  placeholder="Title" maxlength="25" ></p>
+							<p><input id="homeStatus" type="text" size="20" placeholder="Status" maxlength="25" ></p>
+						  		<div class="form-group">
+							  		<label for="comment">Description:</label>
+							  		<textarea id="homeDescription"   class="form-control" rows="5" id="comment" placeholder="Imput task description" ></textarea>
+						   		</div>			  
+						</div>
+						
+						
+						
+						<div id="project"  class="tab-pane fade tabs_project"  >	      	 
+						  <p><input id="projectTitle" type="text"  placeholder="Title" maxlength="25" ></p>
+						  <p><input id="projectStatus" type="text" size="20" placeholder="Status" maxlength="25" ></p>
+						  <div class="form-group">
+							  <label for="comment">Description:</label>
+							  <textarea id="projectDescription" class="form-control" rows="5" id="comment" placeholder="Imput task description" ></textarea>
+						  </div>
+						  <input id="projectDate" type="date" > 
+						</div>
+						
+						
+						
+						<p></p>					
+						<button type="button" class="btn btn-success AddTask" id="AddTask">Add task</button>
+				  </div>  	
+		</form>               	
+    </div>
+     <p></p>     
+	<div class="listView">
+		<h3 class="list" id="list"><strong>List View</strong><br></h3>
+		
+	  <p></p>
+	</div>	
+  </div>  
+  <footer id="footer"> 
+    <p>© 2017 Squirrel Production </p>
+    <p>All rights reserved <a href="https://www.intita.com">www.intita.com</a></p>
+  </footer>
+</div>
+        <script src="javascript.js"  defer ></script>
+        
+</body>
+</html>
+
+<!--
+
+
+name="selopt"
+-->
