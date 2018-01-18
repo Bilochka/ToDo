@@ -3,7 +3,7 @@ var getCreate = document.querySelector('#createUser');
 var userType, somePerson, PersonsList=[];
 var dishome= document.querySelector('#Homeclick');
 var disproject=	document.querySelector('#Projectclick');
-var i, j;
+var i, j, countLi = 1;;
 var buttonOk = document.querySelector('.ok');
 var TasksList=[], taskType1, taskType2, taskType3, sometask, target, targetId;
 var addTask =  document.querySelector('#AddTask'); 
@@ -93,9 +93,12 @@ function hunter (e) {
 	var event = e || window.event;
 	target = event.CurrentTarget || event.srcElement;
 	targetId = target.id;
-	if ( target.className === 'clicker'){
-		//console.log(event.target.className);
-		//console.log(target);		
+	
+	//console.log(targetId);
+	//console.log(target);	
+	//console.log(event.target.className);
+	
+	if ( target.className === 'clicker'){			
 		if( target.id=='Projectclick' && ( userType=='user' || userType=='student') ){
 		alert("The task is not available for this type of user");		
 		}else if( target.id=='Homeclick' && userType=='user' ){
@@ -126,7 +129,7 @@ function createTaskProject(task) {
 function AddTasks (){
  taskType1= "Simple";
  taskType2= "Home";
- taskType2= "Project";
+ taskType3= "Project";
 	var task1 = {
 		 typeOfUser: PersonsList[i],
 		 taskType : taskType1,
@@ -156,23 +159,22 @@ function AddTasks (){
 			case 'user':				
 				sometask = new createTaskSimple(task1);		
 				break;
-			case 'student':	
-				if(targetId === 'Homeclick'){
+			case 'student':						
+				if(targetId == 'Homeclick'){					
 					sometask = new createTaskHome(task2);
 				}else{
 					sometask = new createTaskSimple(task1);
 				}
 					
 			    break;
-			case 'developer':
-				if(targetId === 'Homeclick'){
+			case 'developer':	
+				if(targetId == 'Homeclick'){
 					sometask = new createTaskHome(task2);
-				}else if(targetId === 'Projectclick'){
+				}else if(targetId == 'Projectclick'){
 					sometask = new createTaskProject(task3);
 				}else{
 					sometask = new createTaskSimple(task1);
-				}
-					
+				}					
 				break;			
 			}
 	j = TasksList.length;	
@@ -185,17 +187,34 @@ addTask.addEventListener('click', AddTasks);
 var buttonAddTask = document.querySelector('.AddTask');
 function ShowTasksList(){
      console.log(TasksList);
+	
+	var newLi = document.createElement('li');
+	var newLi = document.createElement('li');
+	
+	 
+	newLi.id = 'li'+ countLi;
+	countLi++;
+	
+	if(targetId == 'Homeclick'){
+		newLi.innerHTML = " Type: " + TasksList[j].taskType + ", Title: " + TasksList[j].Title + ", Status: " + TasksList[j].Status + ", Description: " + TasksList[j].Description;
+	}else if(targetId == 'Projectclick'){
+		newLi.innerHTML = " Type: " + TasksList[j].taskType + ", Title: " + TasksList[j].Title + ", Status: " + TasksList[j].Status + ", Description: " + TasksList[j].Description + ", Date: " + TasksList[j].Date ;
+	}else{
+		newLi.innerHTML = " Type: " + TasksList[j].taskType + ", Title: " + TasksList[j].Title + ", Status: " + TasksList[j].Status;
+	}	
+	listShow.appendChild(newLi);	
+	
+	
 }
-	buttonAddTask.addEventListener('click', ShowTasksList);
+	buttonAddTask.addEventListener('click', ShowTasksList); 
+
+// Remove Tasks --------------------------------------------------------------------------
+   
+ //  var deleteTask = document.getElementById('');
+ //  parentElem.removeChild(deleteTask) 
 
 
-
-
-
-
-
-
-
+//<input type="submit" name="s" value="OK">
 
 
 
